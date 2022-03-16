@@ -11,9 +11,8 @@ export async function getStaticProps() {
   const res = await client.getEntries({ content_type: 'marmiteApp' })
 
   return {
-    props: {
-      marmiteApps: res.items
-    }
+    props: { marmiteApps: res.items },
+    revalidate: 1
   }
 }
 

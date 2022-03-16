@@ -30,7 +30,8 @@ export async function getStaticProps({params}) {
   })
 
   return {
-    props: { marmiteApp: items[0] }
+    props: { marmiteApp: items[0] },
+    revalidate: 1
   }
 }
 
