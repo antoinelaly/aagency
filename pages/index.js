@@ -17,6 +17,7 @@ export async function getStaticProps() {
   }
 }
 
+
 export default function Recipes({marmiteApps}) {
   console.log('marmiteApps', marmiteApps)
   return (
