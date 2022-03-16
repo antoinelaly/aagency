@@ -22,16 +22,8 @@ export default function Recipes({marmiteApps}) {
   return (
     <div className="recipe-list">
       {marmiteApps.map(marmiteApp => (
-
-        <MarmiteAppCard key={marmiteApp.sys.id} marmiteApp={marmiteApp}/>
+        <div key={marmiteApp.sys.id}>{marmiteApp.fields.titre}</div>
       ))}
-
-      <style jsx>{`
-      .recipe-list {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 20px 60px;
-      }`}</style>
     </div>
   )
 }
