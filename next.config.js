@@ -1,5 +1,7 @@
 module.exports = {
-    images: {
-      domains: ['images.ctfassets.net'],
-    },
-  }
+  reactStrictMode: true,
+  images: {
+    loader: 'imgix',
+    path: '',
+  },
+}
