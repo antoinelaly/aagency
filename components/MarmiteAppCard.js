@@ -22,9 +22,9 @@ export default function MarmiteAppCard({marmiteApp}) {
                 </div>
             </div>
             <style jsx>{`
-        .card {
-          transform: rotateZ(-1deg);
-        }
+        // .card {
+        //   transform: rotateZ(-1deg);
+        // }
         .content {
           background: #fff;
           box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
