@@ -1,10 +1,47 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { useRef, useEffect } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function MarmiteAppCard({marmiteApp}) {
+
+  const revealRefs = useRef([]);
+  revealRefs.current = [];
+
+  useEffect(() => {
+
+    revealRefs.current.forEach((el, index) => {
+        
+      gsap.fromTo(el, {
+        autoAlpha: 0
+      }, {
+        duration: 1, 
+        autoAlpha: 1,
+        ease: 'none',
+        scrollTrigger: {
+          id: `section-${index+1}`,
+          trigger: el,
+          start: 'top center+=100',
+          toggleActions: 'play none none reverse'
+        }
+      });
+
+    });
+
+  }, []);
+
+  const addToRefs = el => {
+    if (el && !revealRefs.current.includes(el)) {
+        revealRefs.current.push(el);
+    }
+  };
+
     const { titre, slug, tempsDeCuisson, thumbnail } = marmiteApp.fields
     return (
-        <div className="card">
+        <div className="card" ref={addToRefs}>
             <div className="features">
                 <Image 
                     src={'https:' + thumbnail.fields.file.url}

@@ -1,6 +1,7 @@
 import { createClient } from 'contentful'
 import MarmiteAppCard from '../components/MarmiteAppCard'
 
+
 export async function getStaticProps() {
 
   const client = createClient({
@@ -18,7 +19,7 @@ export async function getStaticProps() {
 
 
 export default function Recipes({marmiteApps}) {
-  console.log('marmiteApps', marmiteApps)
+  // console.log('marmiteApps', marmiteApps)
   return (
     <div className="recipe-list">
       {marmiteApps.map(marmiteApp => (
