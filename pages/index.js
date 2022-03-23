@@ -18,8 +18,8 @@ export async function getStaticProps() {
 }
 
 
-export default function Recipes({marmiteApps}) {
-  // console.log('marmiteApps', marmiteApps)
+export default function Etudes({marmiteApps}) {
+
   return (
     <div className="recipe-list">
       {marmiteApps.map(marmiteApp => (
@@ -32,7 +32,11 @@ export default function Recipes({marmiteApps}) {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 20px 60px;
-      }`}</style>
+      }
+      @media (max-width: 640px) { 
+        .recipe-list { display: block; }
+      }
+      `}</style>
     </div>
   )
 }

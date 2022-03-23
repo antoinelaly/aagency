@@ -1,22 +1,12 @@
 import Link from 'next/link'
+import Navbar from './Navbar'
 
 export default function Layout({ children }) {
 
   return (
-    <div className="layout">
-      <header>
-        <Link href="/">
-          <a>
-            <h1>
-              <span>agence</span>
-              <span>Aarno</span>
-            </h1>
-            <h2>image de marques</h2>
-          </a>
-        </Link>
-      </header>
-
-      <div className="page-content">
+    <div className="layout page-content">
+      <Navbar />
+      <div className="">
         { children }
       </div>
 

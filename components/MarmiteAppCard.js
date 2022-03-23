@@ -55,7 +55,7 @@ export default function MarmiteAppCard({marmiteApp}) {
                     <div>Aarno accompagne la marque depuis {tempsDeCuisson} ans</div>
                 </div>
                 <div className="actions">
-                    <Link href={'/recipes/' + slug}><a>La marque</a></Link>
+                    <Link href={'/etudes/' + slug}><a>La marque</a></Link>
                 </div>
             </div>
             <style jsx>{`
